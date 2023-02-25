@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.chaquo.python'
+
+
+
+android {
+    compileSdkVersion 30
+
+    /*sourceSets {
+        main {
+            python.srcDir "src/main/python"
+        }
+    }*/
+
+
+    defaultConfig {
+        applicationId "com.example.eduapplication"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+        /*
+        python {
+
+            pip{
+                //install "tensorflow-2.1.0-9-cp38-cp38-android_16_armeabi_v7a.whl"
+                install "tensorflow"
+                install "tflearn==0.3.2"
+                install "nltk"
+                install "numpy"
+                install "requests"
+                install "setuptools"
+                // install "grpcio-1.30.0-0-cp38-cp38-android_16_x86.whl"
+                // install "jsonlib"
+                install "simplejson"
+                install "keras==2.3.1"
+                // install "socket"
+                //install "errno"
+
+            }
+
+
+
+            buildPython "C:/Users/Zayne/AppData/Local/Programs/Python/Python37/python.exe"
+        }*/
+
+
+
+
+
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+
+
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.example.zane'
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    //implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    //implementation fileTree(dir:"libs", includes: ["YouTubeAndroidPlayerApi.jar"])
+    //implementation 'com.android.support:recyclerview-v7:27.0.0'
+
+}
